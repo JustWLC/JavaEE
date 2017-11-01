@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>upload</title>
+<style type="text/css">
+*{
+	margin: 0px;
+	padding: 0px;
+	}
+	
+	
+#al{
+	width:500px;
+	margin: 30px auto;
+	background: #f8fdff;
+	}
+	
+.line{
+	width:500px;
+	height: 30px;
+	margin: 20px auto;
+	}
+
+.leftDiv{
+	width: 120px;
+	float: left;
+	text-align: left;
+	}
+	
+.rightDiv{
+	width:260px;
+	height:25px;
+	line-height:25px;
+	float: left;
+	}
+	
+.button{
+	width: 50px;
+	float: left;
+	height:30px;
+	font: bold 16px/1.5 simsun;
+	background: #69b946;
+	color: #fff;
+	border: none;
+	}
+</style>
+</head>
+<body>
+	<form action="" method="post" enctype="multipart/form-data">
+	<div align="center" class="al">
+		<br>
+		<fieldset style="width: 50%">
+			<legend style="border-color: #fff;">上传文件</legend><br>
+			
+			<div class="line" >
+				<div class="leftDiv" align="left">上传文件一</div>
+				<div class="rightDiv" align="left">
+					<input type="file" name="file1" class="text">
+				</div>
+			</div>
+			
+			<div class="line" >
+				<div class="leftDiv" align="left">上传文件二</div>
+				<div class="rightDiv" align="left">
+					<input type="file" name="file2" class="text">
+				</div>
+			</div>
+			
+			<div class="line" >
+				<div class="leftDiv" align="left">上传文件说明一</div>
+				<div class="rightDiv" align="left">
+					<input type="text" name="description1" class="text">
+				</div>
+			</div>
+			
+			<div class="line" >
+				<div class="leftDiv" align="left">上传文件说明二</div>
+				<div class="rightDiv" align="left">
+					<input type="text" name="description2" class="text">
+				</div>
+			</div>
+			
+			<br>
+			<div class="line" >
+				<div class="leftDiv" align="left">
+					&nbsp;&nbsp;&nbsp;
+				</div>
+				<div class="rightDiv" align="left">
+					<input type="submit" value="上传" class="button">
+				</div>
+			</div>
+		</fieldset>
+		
+	</div>
+	</form>
+</body>
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>注册用户信息</title>
+<script>
+	function reloadImage(){
+		document.getElementById('btn').disabled=true;
+		document.getElementById('identity').src='IdentityServlet?ts=' + new Date().getTime();
+	}
+</script>
+<style type="text/css">
+*{	
+	margin: 0px;padding: 0px;
+	}/*使所有元素内外边距都为0*/
+
+h3{
+	font-size: 22px;
+	color: #3a3a3a; 
+	text-indent: 10px; /*段落开头文字缩进10px*/
+	border-left: solid 3px #33CCCC;
+	}
+	
+	
+#wrap{
+	margin: 30px auto; 
+	width: 610px; 
+	font: 16px/2 simsum; /*字体大小16px 2em行高 字体宋体*/
+ 	background: #f8fdff;
+	}
+	
+#top{
+	border-bottom:solid 1px #ccc;
+	padding-bottom: 5px; 
+	}
+	
+.top_img{
+	margin: 30px 0;
+	}
+
+.ipt_box{
+	width: 400px; 
+	height: 30px; 
+	margin: 20px auto;
+	}
+	
+.item{
+	width: 80px; 
+	float: left;
+	text-align: right;
+	}
+	
+.txt{
+	width: 300px; 
+	height: 30px; 
+	line-height: 30px;
+	float: right;
+	}
+	
+.code{
+	height: 50px; 
+	line-height: 50px; 
+	float: left;}
+	
+.code_img{
+	float:right;
+	}
+	
+.px12{
+	font-size: 12px;
+	line-height: 15px;
+	}
+	
+.veri{
+	height: 30px; 
+	line-height: 30px; 
+	float: left;
+	}
+	
+.px125{
+	color: #fff; 
+	width: 125px; 
+	height: 32px; 
+	background: #69b946; 
+	display: inline-block;
+	font-weight: bold;
+	float: right;
+	text-align: center;
+	cursor: pointer;/*光标呈现为指示链接的指针（一只手）*/
+	}
+	
+.submit{
+	width: 300px; 
+	float:right;
+	height: 50px;
+	font: bold 32px/1.5 simsun;
+	background: #69b946;
+	color: #fff;
+	border: none;
+	}
+	
+#foot{
+	width: 100%;
+	text-align: center;
+	line-height: 100px;
+	color: #ccc;
+	}
+</style>
+</head>
+<body>
+<div id="wrap">
+	<div id="top">
+		<h3>注册账号</h3>
+	</div>
+	
+	<form action="" method="post" name="register_form" id="register">
+		<div class="ipt_box">
+			<label for="nick" class="item">昵称</label>
+			<input type="text" name="nick" id="nick" class="txt" maxlength="24" autocomplete="off" >
+		</div>
+		
+		<div class="ipt_box">
+			<label for="pwd" class="item">密码</label>
+			<input type="password" name="pwd" id="pwd" class="txt" maxlength="16">
+		</div>
+		
+        <div class="ipt_box">
+			<label for="pwd_y" class="item">密码</label>
+			<input type="password" name="pwd_y" id="pwd_y" class="txt" maxlength="16">
+		</div>
+		
+		<div class="ipt_box">
+			<label class="item">性别</label>
+			<div class="txt">
+				<label for="rdo1" class="px70"><input type="radio" name="radio" id="rdo1" value="男" checked>男</label>
+				<label for="rdo2" class="px70"><input type="radio" name="radio" id="rdo2" value="女" checked>女</label>
+			</div>
+		</div>
+		<div class="ipt_box">
+			<label class="item">生日</label>
+			<div class="txt">
+			
+			<select name="birth"><option value="公历">公历<option value="农历">农历 </select>
+			
+			<select name="in_year" size="1">
+			<option value="1996年">1996年
+			<option value="1997年">1997年
+			<option value="1998年">1998年
+			<option value="1999年">1999年
+			<option value="2000年">2000年
+			<option value="2001年">2001年
+			<option value="2002年">2002年
+			<option value="2003年">2003年
+			<option value="2004年">2004年
+			<option value="2005年">2005年
+			<option value="2006年">2006年
+			<option value="2007年">2007年
+			<option value="2008年">2008年
+			<option value="2009年">2009年
+			<option value="2010年">2010年
+			</select>
+			
+			<select name="in_month" size="1">
+			<option value="1月">1月
+			<option value="2月">2月
+			<option value="3月">3月
+			<option value="4月">4月
+			<option value="5月">5月
+			<option value="6月">6月
+			<option value="7月">7月
+			<option value="8月">8月
+			<option value="9月">9月
+			<option value="10月">10月
+			<option value="11月">11月
+			<option value="12月">12月
+			</select>
+			
+			<select name="in_day" size="1">
+			<option value="1日">1日 <option value="2日">2日<option value="3日">3日
+			<option value="4日">4日 <option value="5日">5日<option value="6日">6日
+			<option value="7日">7日 <option value="8日">8日<option value="9日">9日
+			<option value="10日">10日 <option value="11日">11日<option value="12日">12日
+			<option value="13日">13日 <option value="14日">14日<option value="15日">15日
+			<option value="16日">16日 <option value="17日">17日<option value="18日">18日
+			<option value="19日">19日 <option value="20日">20日<option value="21日">21日
+			<option value="22日">22日 <option value="23日">23日<option value="24日">24日
+			<option value="25日">25日 <option value="26日">26日<option value="27日">27日
+			<option value="28日">28日 <option value="29日">29日<option value="30日">30日
+			<option value="31日">31日 
+			</select>
+			</div>
+		</div>
+		
+		<div class="ipt_box">
+			<label class="item">所在地</label>
+			<div class="txt">
+			
+			<select name="province" size="1">
+			<option value="江苏">江苏
+			<option value="山东">山东
+			<option value="浙江">浙江
+			<option value="广东">广东
+			<option value="山西">山西
+			<option value="湖南">湖南
+			<option value="上海">上海
+			<option value="北京">北京
+			<option value="重庆">重庆
+			<option value="安徽">安徽
+			</select>
+			
+			<select name="city" size="1">
+			<option value="南京">南京
+			<option value="镇江">镇江
+			<option value="扬州">扬州
+			<option value="泰州">泰州
+			</select>
+			</div>
+		</div>
+		
+		<div class="ipt_box" style="margin-bottom: 40px;">
+			<label for="code" class="item" style="line-height: 50px;">验证码</label>
+			<div class="txt">
+				<input type="text" id="code" name="code" class="code" maxlength="8">
+			
+				<img  src="IdentityServlet" id="identity" onload="btn.disabled=false;" style="line-height: "/>
+	<input type="button" value="换一个" onclick="reloadImage()" id="btn">
+			</div>
+		</div>
+		
+		<div class="ipt_box">
+			<label for="num" class="item">手机号码</label>
+			<div class="txt">
+				<input type="text" name="num" id="num" class="txt" maxlength="11">
+			</div>
+		</div>
+	
+		
+		<div class="ipt_box">
+			<div class="txt">
+			<input name="num_code" type="text" id="num_code" maxlength="8" class="veri">
+			<label for="num_code" class="px125">获取短信验证码</label>
+		</div>
+		</div>
+		
+		<div class="ipt_box">
+			<div class="txt">
+				<input type="checkbox" name="zone" id="zone" value="开通QQ空间" checked="checked">
+				<label for="zone" class="px12">同时开通QQ空间</label><br>
+				<input type="checkbox" name="agree" id="agree" value="同意服务条款" checked="checked">
+				<label for="agree" class="px12">我已阅读并同意服务条款和隐私政策</label>	
+			</div>
+		</div><br>
+		
+		<div class="ipt_box">
+			<input type="submit" name="submit" class="submit"  value="提交注册">
+		</div>
+	</form>
+</div>
+
+	<div id="foot">Copyright 1998-2017 Tencent All Rights Reserved 腾讯公司 版权所有</div>
+</body>
+</html>
